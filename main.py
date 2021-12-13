@@ -36,13 +36,13 @@ while condition:
 
     # Hit Wall
     if snake.head.xcor() > 260 or snake.head.xcor() < -260 or snake.head.ycor() > 260 or snake.head.ycor() < -260:
-        score.gameOver()
-        condition = False
+        score.reset()
+        snake.reset()
 
     # detect tail
     for seg in snake.segments[1:]:
         if snake.head.distance(seg) < 10:
-            condition = False
-            score.gameOver()
+            score.reset()
+            snake.reset()
 
 screen.exitonclick()
